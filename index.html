@@ -1,260 +1,470 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Lachérie Bakes — Tart, Cake & Gift Boxes Premium Batam</title>
-  <meta name="description" content="Lachérie Bakes — Freshly baked with love. Tart, cake, dessert & gift boxes premium di Batam. Pesan via WhatsApp." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Inter', sans-serif; color: #2d2a24; background: #fefaf7; }
-    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lachérie Bakes — Dessert & Tart Premium Batam</title>
+<meta name="description" content="Lachérie Bakes: Tart, cake & dessert handmade premium di Batam. Bisa custom untuk acara spesial Anda.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ===== RESET & BASE ===== */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --gold:#c4a88a; --gold-light:#e8d5bb; --cream:#fdf6f0;
+  --brown:#5a3a2a; --deep:#2d1a0a; --warm:#8a5a3a;
+  --rose:#d4a0a0; --latte:#f5ede4;
+  --ff-serif:'Playfair Display',serif; --ff-sans:'Inter',sans-serif;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--ff-sans);color:var(--brown);background:var(--cream);overflow-x:hidden}
 
-    /* Nav */
-    nav {
-      padding: 16px 0; position: fixed; top: 0; left: 0; right: 0;
-      background: rgba(254,250,247,0.95); backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(0,0,0,0.06); z-index: 100;
-    }
-    nav .container { display: flex; align-items: center; justify-content: space-between; }
-    .logo { font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 700; color: #8b5e3c; text-decoration: none; }
-    .logo em { font-style: normal; }
-    .logo span { font-weight: 400; font-size: 0.8rem; color: #b8865a; }
-    nav a { color: #5a4a3a; text-decoration: none; font-size: 0.9rem; font-weight: 500; }
-    nav a:hover { color: #8b5e3c; }
+/* ===== UTILITY ===== */
+.container{max-width:1160px;margin:0 auto;padding:0 28px}
+.btn{
+  display:inline-flex;align-items:center;gap:10px;padding:15px 34px;
+  border-radius:50px;font-weight:600;font-size:0.95rem;text-decoration:none;
+  transition:all .3s cubic-bezier(.2,.9,.4,1);border:none;cursor:pointer
+}
+.btn-wa{background:#25D366;color:#fff}
+.btn-wa:hover{background:#1da851;transform:translateY(-3px);box-shadow:0 8px 24px rgba(37,211,102,.35)}
+.btn-gold{background:var(--gold);color:#fff}
+.btn-gold:hover{background:var(--brown);transform:translateY(-3px);box-shadow:0 8px 24px rgba(90,58,42,.3)}
+.btn-ghost{border:2px solid var(--gold);color:var(--brown);background:transparent}
+.btn-ghost:hover{background:var(--gold);color:#fff}
 
-    /* Hero */
-    .hero {
-      margin-top: 68px; padding: 80px 0 60px;
-      background: linear-gradient(135deg, #fdf6f0, #f8ede4);
-      text-align: center;
-    }
-    .hero h1 {
-      font-family: 'Playfair Display', serif; font-size: 3rem; font-weight: 700;
-      color: #5a3a2a; margin-bottom: 8px;
-    }
-    .hero .tagline { font-size: 1.15rem; color: #8b6e5a; font-style: italic; margin-bottom: 16px; }
-    .hero .bio { max-width: 500px; margin: 0 auto 28px; color: #7a6a5a; line-height: 1.6; }
-    .btn {
-      display: inline-flex; align-items: center; gap: 8px; padding: 14px 32px;
-      border-radius: 50px; font-weight: 600; text-decoration: none; font-size: 0.95rem;
-      transition: 0.2s;
-    }
-    .btn-wa { background: #25D366; color: #fff; }
-    .btn-wa:hover { background: #1da851; transform: translateY(-2px); }
-    .btn-outline { border: 2px solid #c4a88a; color: #5a3a2a; background: transparent; }
-    .btn-outline:hover { background: #c4a88a; color: #fff; }
+/* ===== NAV ===== */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0;transition:.3s}
+nav.scrolled{background:rgba(253,246,240,.92);backdrop-filter:blur(16px);box-shadow:0 2px 20px rgba(0,0,0,.06)}
+nav .container{display:flex;align-items:center;justify-content:space-between;padding-top:18px;padding-bottom:18px}
+.logo{font-family:var(--ff-serif);font-size:1.4rem;font-weight:700;color:var(--brown);text-decoration:none;display:flex;align-items:baseline;gap:4px}
+.logo .dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--gold);margin:0 4px}
+.logo small{font-weight:400;font-size:.7rem;color:var(--warm);letter-spacing:1px;text-transform:uppercase}
+.nav-links{display:flex;gap:32px;align-items:center}
+.nav-links a{color:var(--brown);text-decoration:none;font-size:.88rem;font-weight:500;position:relative;transition:.2s}
+.nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:2px;background:var(--gold);transition:.3s}
+.nav-links a:hover::after{width:100%}
+.nav-wa{display:inline-flex;align-items:center;gap:6px;background:var(--gold);color:#fff!important;padding:8px 20px;border-radius:50px;font-weight:600;font-size:.82rem!important}
+.nav-wa:hover{background:var(--brown)!important}
+.nav-wa::after{display:none!important}
 
-    .hero-gallery {
-      display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
-      max-width: 800px; margin: 40px auto 0;
-    }
-    .hero-gallery img {
-      width: 100%; height: 220px; object-fit: cover; border-radius: 16px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.08); transition: 0.3s;
-    }
-    .hero-gallery img:hover { transform: scale(1.03); box-shadow: 0 8px 30px rgba(0,0,0,0.12); }
+/* ===== HERO ===== */
+.hero{
+  min-height:100vh;display:flex;align-items:center;position:relative;
+  background:linear-gradient(165deg,var(--cream) 0%,var(--latte) 40%,var(--gold-light) 100%);
+  overflow:hidden;padding-top:80px
+}
+.hero::before{
+  content:'';position:absolute;top:-30%;right:-10%;width:60%;height:120%;
+  background:radial-gradient(ellipse at center,rgba(196,168,138,.12) 0%,transparent 70%);
+  pointer-events:none
+}
+.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:8px 18px;background:rgba(255,255,255,.6);backdrop-filter:blur(12px);
+  border-radius:50px;font-size:.82rem;font-weight:500;color:var(--warm);margin-bottom:20px;
+  border:1px solid rgba(196,168,138,.2)
+}
+.hero-badge .pulse{width:8px;height:8px;border-radius:50%;background:#25D366;animation:pulse 2s infinite}
+@keyframes pulse{0%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(1.4)}100%{opacity:1;transform:scale(1)}}
+.hero h1{
+  font-family:var(--ff-serif);font-size:clamp(2.4rem,5vw,4rem);font-weight:700;
+  line-height:1.1;color:var(--deep);margin-bottom:12px
+}
+.hero h1 em{font-style:italic;color:var(--gold)}
+.hero .subtitle{
+  font-size:1.1rem;color:var(--warm);line-height:1.7;max-width:480px;margin-bottom:32px;
+  font-weight:300
+}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+.hero-image{position:relative;display:flex;align-items:center;justify-content:center}
+.hero-image .frame{
+  position:relative;width:100%;max-width:480px;aspect-ratio:4/5;
+  border-radius:24px;overflow:hidden;box-shadow:0 20px 60px rgba(90,58,42,.15);
+  background:#f0e0d0
+}
+.hero-image .frame img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.hero-image .frame:hover img{transform:scale(1.05)}
+.hero-image .float-card{
+  position:absolute;bottom:-20px;left:-20px;
+  background:#fff;padding:16px 20px;border-radius:16px;
+  box-shadow:0 8px 30px rgba(0,0,0,.08);
+  font-size:.85rem;font-weight:600;color:var(--brown)
+}
+.hero-image .float-card span{display:block;font-size:1.4rem;color:var(--gold);font-weight:700}
+.floating{animation:float 6s ease-in-out infinite}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
 
-    /* Sections */
-    section { padding: 64px 0; }
-    .section-title {
-      font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 600;
-      text-align: center; color: #5a3a2a; margin-bottom: 40px;
-    }
-    .section-title:after {
-      content: ""; display: block; width: 40px; height: 2px;
-      background: #c4a88a; margin: 12px auto 0;
-    }
+/* ===== SECTION COMMON ===== */
+section{padding:100px 0}
+.section-label{
+  display:inline-block;font-size:.75rem;text-transform:uppercase;letter-spacing:3px;
+  color:var(--gold);font-weight:600;margin-bottom:8px;position:relative;
+  padding-left:40px
+}
+.section-label::before{content:'';position:absolute;left:0;top:50%;width:28px;height:1px;background:var(--gold)}
+.section-title{
+  font-family:var(--ff-serif);font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:700;
+  color:var(--deep);margin-bottom:12px;line-height:1.2
+}
+.section-desc{font-size:1rem;color:var(--warm);max-width:540px;line-height:1.7;font-weight:300}
 
-    /* Products */
-    .products { background: #fff; }
-    .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; }
+/* ===== PRODUCTS ===== */
+.products{background:#fff}
+.products .head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:48px;flex-wrap:wrap;gap:20px}
+.product-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:24px}
+.product-card{
+  background:var(--cream);border-radius:20px;overflow:hidden;
+  transition:all .4s cubic-bezier(.2,.9,.4,1);
+  border:1px solid rgba(196,168,138,.15);position:relative;
+  cursor:default
+}
+.product-card:hover{transform:translateY(-8px);box-shadow:0 16px 48px rgba(90,58,42,.1);border-color:var(--gold-light)}
+.product-card .img-wrap{
+  height:240px;overflow:hidden;background:var(--latte);position:relative
+}
+.product-card .img-wrap img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.product-card:hover .img-wrap img{transform:scale(1.08)}
+.product-card .badge{
+  position:absolute;top:12px;right:12px;
+  padding:5px 12px;border-radius:50px;background:rgba(255,255,255,.85);backdrop-filter:blur(8px);
+  font-size:.7rem;font-weight:600;color:var(--warm)
+}
+.product-card .info{padding:24px}
+.product-card h3{font-family:var(--ff-serif);font-size:1.15rem;margin-bottom:6px;color:var(--deep)}
+.product-card p{color:var(--warm);font-size:.88rem;line-height:1.6;font-weight:300}
+.product-card .price{font-weight:600;color:var(--brown);font-size:.95rem;margin-top:10px}
 
-    .product-card {
-      background: #fefaf7; border-radius: 16px; overflow: hidden;
-      border: 1px solid #f0e8e0; transition: 0.3s;
-    }
-    .product-card:hover { box-shadow: 0 8px 24px rgba(0,0,0,0.08); transform: translateY(-4px); }
-    .product-card .img-wrap {
-      height: 200px; overflow: hidden; background: #f8f0e8;
-      display: flex; align-items: center; justify-content: center;
-    }
-    .product-card .img-wrap img { width: 100%; height: 100%; object-fit: cover; }
-    .product-card .info { padding: 20px; }
-    .product-card h3 { font-family: 'Playfair Display', serif; font-size: 1.1rem; margin-bottom: 6px; color: #5a3a2a; }
-    .product-card p { color: #8a7a6a; font-size: 0.9rem; line-height: 1.5; }
+/* ===== ABOUT ===== */
+.about{
+  background:linear-gradient(180deg,var(--cream) 0%,#fff 100%);
+  position:relative
+}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.about-image{
+  border-radius:24px;overflow:hidden;box-shadow:0 16px 48px rgba(90,58,42,.1);
+  position:relative
+}
+.about-image img{width:100%;display:block}
+.about-image .stamp{
+  position:absolute;top:-12px;right:-12px;width:80px;height:80px;
+  background:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;
+  color:#fff;font-weight:700;font-size:.75rem;text-align:center;line-height:1.2;
+  box-shadow:0 4px 16px rgba(196,168,138,.4)
+}
+.about-text h3{font-family:var(--ff-serif);font-size:1.4rem;color:var(--deep);margin-bottom:16px}
+.about-text p{color:var(--warm);line-height:1.8;margin-bottom:12px;font-weight:300}
 
-    /* About */
-    .about-content { max-width: 700px; margin: 0 auto; text-align: center; color: #7a6a5a; line-height: 1.8; }
+/* ===== GALLERY ===== */
+.gallery{background:var(--latte)}
+.gallery-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:48px
+}
+.gallery-item{
+  border-radius:16px;overflow:hidden;aspect-ratio:1;position:relative;
+  cursor:pointer;transition:.4s;
+}
+.gallery-item:hover{transform:scale(1.02);box-shadow:0 8px 24px rgba(0,0,0,.1)}
+.gallery-item img{width:100%;height:100%;object-fit:cover;transition:.6s}
+.gallery-item:hover img{transform:scale(1.1)}
+.gallery-item.tall{grid-row:span 2}
+.gallery-item.wide{grid-column:span 2}
 
-    /* Order */
-    .order-section {
-      background: linear-gradient(135deg, #fdf6f0, #f8ede4);
-      text-align: center;
-    }
-    .order-info { display: grid; grid-template-columns: repeat(2,1fr); gap: 20px; max-width: 500px; margin: 0 auto 28px; }
-    .order-info .item { padding: 20px; background: #fff; border-radius: 12px; }
-    .order-info .item .label { font-size: 0.8rem; color: #b8865a; text-transform: uppercase; letter-spacing: 1px; }
-    .order-info .item .value { font-weight: 600; margin-top: 4px; color: #5a3a2a; }
+/* ===== ORDER ===== */
+.order{
+  background:var(--deep);color:#fff;position:relative;overflow:hidden;
+  text-align:center
+}
+.order::before{
+  content:'';position:absolute;top:-50%;right:-20%;width:80%;height:200%;
+  background:radial-gradient(ellipse,rgba(196,168,138,.08) 0%,transparent 70%);
+  pointer-events:none
+}
+.order .section-title{color:#fff}
+.order .section-desc{color:#c4a88a;margin:0 auto 40px}
+.contact-cards{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:16px;max-width:720px;
+  margin:0 auto 40px
+}
+.contact-card{
+  padding:24px 16px;background:rgba(255,255,255,.06);border-radius:16px;
+  border:1px solid rgba(255,255,255,.08);transition:.3s
+}
+.contact-card:hover{background:rgba(255,255,255,.1);transform:translateY(-4px)}
+.contact-card .icon{font-size:1.6rem;margin-bottom:8px;display:block}
+.contact-card .label{font-size:.7rem;text-transform:uppercase;letter-spacing:1px;opacity:.6;margin-bottom:4px}
+.contact-card .value{font-weight:600;font-size:.95rem}
 
-    /* Gallery */
-    .gallery-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; }
-    .gallery-grid img { width: 100%; height: 260px; object-fit: cover; border-radius: 12px; }
+/* ===== TESTIMONIALS ===== */
+.testimonials{background:#fff}
+.testimonial-card{
+  max-width:600px;margin:40px auto 0;text-align:center;
+  padding:40px;background:var(--cream);border-radius:24px;
+  border:1px solid rgba(196,168,138,.1);position:relative
+}
+.testimonial-card::before{content:'"';position:absolute;top:10px;left:24px;font-size:4rem;color:var(--gold-light);font-family:var(--ff-serif);line-height:1;opacity:.4}
+.testimonial-card p{color:var(--warm);font-style:italic;font-size:1.05rem;line-height:1.8}
+.testimonial-card .author{font-weight:600;color:var(--deep);margin-top:16px}
+.testimonial-card .stars{color:#e8a838;font-size:1.1rem;margin-bottom:12px}
 
-    /* Footer */
-    footer { padding: 32px 0; text-align: center; background: #2d2a24; color: #a09080; font-size: 0.85rem; }
-    footer .social { margin-bottom: 12px; }
-    footer .social a { color: #c4a88a; text-decoration: none; margin: 0 8px; font-size: 0.9rem; }
+/* ===== FOOTER ===== */
+footer{
+  padding:40px 0;background:var(--cream);border-top:1px solid rgba(196,168,138,.15)
+}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px}
+footer h4{font-family:var(--ff-serif);color:var(--deep);font-size:1rem;margin-bottom:12px}
+footer p,footer a{color:var(--warm);font-size:.85rem;text-decoration:none;line-height:2}
+footer a:hover{color:var(--gold)}
+.footer-bottom{margin-top:32px;padding-top:24px;border-top:1px solid rgba(196,168,138,.15);display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:.8rem;color:var(--warm)}
 
-    @media (max-width: 768px) {
-      .hero h1 { font-size: 2rem; }
-      .hero-gallery { grid-template-columns: 1fr; }
-      .hero-gallery img { height: 200px; }
-      .gallery-grid { grid-template-columns: 1fr 1fr; }
-      .order-info { grid-template-columns: 1fr; }
-    }
-  </style>
+/* ===== RESPONSIVE ===== */
+@media(max-width:900px){
+  .hero-grid{grid-template-columns:1fr;gap:40px;text-align:center}
+  .hero .subtitle{margin:0 auto 32px}
+  .hero-actions{justify-content:center}
+  .hero-image{max-width:400px;margin:0 auto}
+  .hero-image .float-card{left:10px;bottom:-10px}
+  .about-grid{grid-template-columns:1fr;gap:40px}
+  .gallery-grid{grid-template-columns:repeat(2,1fr)}
+  .contact-cards{grid-template-columns:repeat(2,1fr)}
+  .footer-grid{grid-template-columns:1fr;text-align:center}
+  .nav-links{display:none}
+}
+@media(max-width:500px){
+  section{padding:60px 0}
+  .product-grid{grid-template-columns:1fr}
+  .gallery-grid{grid-template-columns:1fr 1fr}
+  .contact-cards{grid-template-columns:1fr}
+}
+</style>
 </head>
 <body>
 
-<nav>
+<nav id="navbar">
   <div class="container">
-    <a href="/" class="logo">Lachérie <em>Bakes</em> <span>✦ Batam</span></a>
-    <div>
-      <a href="#products" style="margin-right:16px;">Menu</a>
-      <a href="#order">Pesan</a>
+    <a href="#" class="logo">Lachérie<span class="dot"></span><small>Bakes</small></a>
+    <div class="nav-links">
+      <a href="#products">Menu</a>
+      <a href="#about">Tentang</a>
+      <a href="#gallery">Galeri</a>
+      <a href="#order" class="nav-wa">💬 Pesan</a>
     </div>
   </div>
 </nav>
 
 <section class="hero">
-  <div class="container">
-    <h1>Freshly Baked with Love</h1>
-    <p class="tagline">✦ Tart · Cake · Dessert · Gift Boxes ✦</p>
-    <p class="bio">Setiap gigitan adalah karya cinta. Lachérie Bakes menghadirkan tart, cake, dan dessert premium yang dibuat dengan bahan-bahan terbaik di Batam.</p>
+  <div class="container hero-grid">
     <div>
-      <a href="https://wa.me/628179851688?text=Halo%20Lach%C3%A9rie%20Bakes!%20Saya%20tertarik%20dengan%20produk%20Anda" class="btn btn-wa" target="_blank">💬 Pesan via WhatsApp</a>
-      <a href="#products" class="btn btn-outline" style="margin-left:8px;">Lihat Menu</a>
+      <div class="hero-badge"><span class="pulse"></span> Handmade · Premium · Batam</div>
+      <h1>Tart & Dessert <em>Berkelas</em><br>Setiap Gigitan</h1>
+      <p class="subtitle">Dari pastry cream lembut sampai berry segar — setiap tart dan cake dibuat dengan cinta. Untuk momen-momen yang layak dirayakan.</p>
+      <div class="hero-actions">
+        <a href="https://wa.me/628179851688?text=Halo%20Lach%C3%A9rie%20Bakes!%20Saya%20tertarik%20dengan%20produk%20Anda" class="btn btn-wa" target="_blank">💬 Pesan Sekarang</a>
+        <a href="#products" class="btn btn-ghost">Lihat Menu</a>
+      </div>
     </div>
-
-    <div class="hero-gallery">
-      <img src="https://instagram.fbth9-1.fna.fbcdn.net/v/t51.82787-15/711751695_17941129104235387_6603607446976717855_n.heic?stp=dst-jpg_e35_tt6&_nc_cat=102&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTQ0MC5zZHIucmVndWxhcl9waG90by5DMiJ9&_nc_ohc=vBMiB3rxw7wQ7kNvwEU37KF&_nc_oc=AdprkEOnMOexwfcwxFd2r5DKyIdIGAIYrqyWbY-B6WIffAl5RllZxsR4ppK52lNUkDI&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.fbth9-1.fna&_nc_gid=BmDQd5jlf7DRUP5zj8Gb9g&_nc_ss=7a22e&oh=00_Af9hTnlPbFuFr8m240AipOLD_xzVYOVbOxTqxryKNQiW3w&oe=6A2AB2C7" alt="Lachérie Bakes Cake" loading="lazy" />
-      <img src="https://instagram.fbth9-1.fna.fbcdn.net/v/t51.82787-15/711680060_17940639204235387_3529425098898601419_n.heic?stp=dst-jpg_e35_tt6&_nc_cat=100&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTQ0MC5zZHIucmVndWxhcl9waG90by5DMiJ9&_nc_ohc=S6clBL1rirgQ7kNvwFgQhMS&_nc_oc=AdpQ9B3aAOZRS2Q9GqP4Kn2yrRjCzDNb5dwmUwXoJQo_GquGjM-brc72xyTgOYkkglk&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.fbth9-1.fna&_nc_gid=BmDQd5jlf7DRUP5zj8Gb9g&_nc_ss=7a22e&oh=00_Af_gkpDXwf_DZvgFfiUR_gfpU63KyjrjwmHMTJAgkhlFPQ&oe=6A2AC44A" alt="Lachérie Bakes Tart" loading="lazy" />
-      <img src="https://instagram.fbth9-1.fna.fbcdn.net/v/t51.82787-15/706417450_17939668686235387_3889305815365416951_n.heic?stp=dst-jpg_e35_tt6&_nc_cat=101&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTQ0MC5zZHIucmVndWxhcl9waG90by5DMiJ9&_nc_ohc=BK6o3zfN8HkQ7kNvwGJ_tWq&_nc_oc=AdoqN1cfbmyKl82eoBhY8QvA4WYESnS9cJywi5xCj9S3FvM4GZVYjnDFcntbVJRode8&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.fbth9-1.fna&_nc_gid=BmDQd5jlf7DRUP5zj8Gb9g&_nc_ss=7a22e&oh=00_Af_7exCAtjpbgWyOUy_AXlSR0L-ISKz2iD-NXFk7CL2-Vw&oe=6A2AAD43" alt="Lachérie Bakes Cupcake" loading="lazy" />
+    <div class="hero-image">
+      <div class="frame floating">
+        <img src="https://instagram.fbth9-1.fna.fbcdn.net/v/t51.82787-15/711751695_17941129104235387_6603607446976717855_n.heic?stp=dst-jpg_e35_tt6&_nc_cat=102&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTQ0MC5zZHIucmVndWxhcl9waG90by5DMiJ9&_nc_ohc=vBMiB3rxw7wQ7kNvwEU37KF&_nc_oc=AdprkEOnMOexwfcwxFd2r5DKyIdIGAIYrqyWbY-B6WIffAl5RllZxsR4ppK52lNUkDI&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.fbth9-1.fna&_nc_gid=BmDQd5jlf7DRUP5zj8Gb9g&_nc_ss=7a22e&oh=00_Af9hTnlPbFuFr8m240AipOLD_xzVYOVbOxTqxryKNQiW3w&oe=6A2AB2C7" alt="Lachérie Bakes Signature Tart" loading="lazy" />
+      </div>
+      <div class="float-card floating" style="animation-delay:-2s">
+        <span>✦ Premium</span>
+        Handmade · Fresh Daily
+      </div>
     </div>
   </div>
 </section>
 
 <section class="products" id="products">
   <div class="container">
-    <h2 class="section-title">Menu Kami</h2>
+    <div class="head">
+      <div>
+        <div class="section-label">Menu</div>
+        <h2 class="section-title">Signature Collection</h2>
+        <p class="section-desc">Setiap produk dibuat dengan bahan segar dan penuh ketelitian. Dari kelasik sampai kreasi terkini.</p>
+      </div>
+      <a href="https://wa.me/628179851688?text=Halo%20Lach%C3%A9rie%20Bakes!%20Saya%20mau%20order" class="btn btn-gold" target="_blank">💬 Order Sekarang</a>
+    </div>
     <div class="product-grid">
       <div class="product-card">
-        <div class="img-wrap"><img src="https://instagram.fbth9-1.fna.fbcdn.net/v/t51.82787-15/704703098_17939361738235387_5179192114655930659_n.heic?stp=dst-jpg_e35_tt6&_nc_cat=109&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTQ0MC5zZHIucmVndWxhcl9waG90by5DMiJ9&_nc_ohc=dIegOw-EEn8Q7kNvwHuASmo&_nc_oc=AdqP6DuorDjBpNrQyPh7guppKSkUUr5semXkCD5RfZYrMubk48ErjBvxhs_Q89Fpq-w&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.fbth9-1.fna&_nc_gid=BmDQd5jlf7DRUP5zj8Gb9g&_nc_ss=7a22e&oh=00_Af-u1NNFAUxi2_mpz5jgk96ozfTbsAOLdJjg9pscdEjRBA&oe=6A2A9D78" alt="Berry Cheese Roll Cake" loading="lazy" /></div>
+        <div class="img-wrap">
+          <img src="https://instagram.fbth9-1.fna.fbcdn.net/v/t51.82787-15/704703098_17939361738235387_5179192114655930659_n.heic?stp=dst-jpg_e35_tt6&_nc_cat=109&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTQ0MC5zZHIucmVndWxhcl9waG90by5DMiJ9&_nc_ohc=dIegOw-EEn8Q7kNvwHuASmo&_nc_oc=AdqP6DuorDjBpNrQyPh7guppKSkUUr5semXkCD5RfZYrMubk48ErjBvxhs_Q89Fpq-w&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.fbth9-1.fna&_nc_gid=BmDQd5jlf7DRUP5zj8Gb9g&_nc_ss=7a22e&oh=00_Af-u1NNFAUxi2_mpz5jgk96ozfTbsAOLdJjg9pscdEjRBA&oe=6A2A9D78" alt="Berry Cheese Roll Cake" loading="lazy" />
+          <span class="badge">⭐ Favorit</span>
+        </div>
         <div class="info">
           <h3>Berry Cheese Roll Cake</h3>
-          <p>Roll cake lembut dengan cream cheese dan buah berry segar. Manis & asam yang pas.</p>
-        </div>
-      </div>
-      <div class="product-card">
-        <div class="img-wrap"><img src="https://instagram.fbth9-1.fna.fbcdn.net/v/t51.82787-15/681211729_17935472874235387_8028815349483810601_n.heic?stp=dst-jpg_e35_tt6&_nc_cat=111&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTQ0MC5zZHIucmVndWxhcl9waG90by5DMiJ9&_nc_ohc=JoeaSahSUakQ7kNvwFJLj_3&_nc_oc=Adr_Q-SGSvNqkvV9lNAPCUIvNl3td31niDgJc9iYXV_J7No7fZb77U5IVBdkDD91nj8&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.fbth9-1.fna&_nc_gid=BmDQd5jlf7DRUP5zj8Gb9g&_nc_ss=7a22e&oh=00_Af9ev8ORXCT0fAjVc9HqKxREd_imFYPiaz2JYz8LkPa1Vg&oe=6A2A99C6" alt="Chocolate Mousse Tart" loading="lazy" /></div>
-        <div class="info">
-          <h3>Chocolate Mousse Tart</h3>
-          <p>Chocolate mousse lembut di atas crust renyah. Cocok untuk pecinta cokelat sejati.</p>
-        </div>
-      </div>
-      <div class="product-card">
-        <div class="img-wrap"><img src="https://instagram.fbth9-1.fna.fbcdn.net/v/t51.82787-15/673169159_17934194145235387_1824414916921185432_n.heic?stp=dst-jpg_e35_tt6&_nc_cat=100&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTQ0MC5zZHIucmVndWxhcl9waG90by5DMiJ9&_nc_ohc=mItTvw9Y0MwQ7kNvwHDY4ns&_nc_oc=AdprhbYXVa0QhwN2Etn5pUU8zn6KaNZDI4WaBO5i7epCHzepioZhCi5MlOREroC_KsM&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.fbth9-1.fna&_nc_gid=BmDQd5jlf7DRUP5zj8Gb9g&_nc_ss=7a22e&oh=00_Af-wTUpH57DH3ODLHP4PyUlejVrruGne9YNRY7iVyxWJqg&oe=6A2ACEB3" alt="Strawberry Tart" loading="lazy" /></div>
-        <div class="info">
-          <h3>Fresh Strawberry Tart</h3>
-          <p>Strawberry segar di atas pastry cream lembut. Manis alami, tampilan cantik.</p>
-        </div>
-      </div>
-      <div class="product-card">
-        <div class="img-wrap"><img src="https://instagram.fbth9-1.fna.fbcdn.net/v/t51.82787-15/711680060_17940639204235387_3529425098898601419_n.heic?stp=dst-jpg_e35_tt6&_nc_cat=100&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTQ0MC5zZHIucmVndWxhcl9waG90by5DMiJ9&_nc_ohc=S6clBL1rirgQ7kNvwFgQhMS&_nc_oc=AdpQ9B3aAOZRS2Q9GqP4Kn2yrRjCzDNb5dwmUwXoJQo_GquGjM-brc72xyTgOYkkglk&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.fbth9-1.fna&_nc_gid=BmDQd5jlf7DRUP5zj8Gb9g&_nc_ss=7a22e&oh=00_Af_gkpDXwf_DZvgFfiUR_gfpU63KyjrjwmHMTJAgkhlFPQ&oe=6A2AC44A" alt="Mixed Fruit Tart" loading="lazy" /></div>
-        <div class="info">
-          <h3>Mixed Fruit Tart</h3>
-          <p>Perpaduan buah segar dengan custard lembut. Favorit untuk hampers & gift box!</p>
-        </div>
-      </div>
-      <div class="product-card">
-        <div class="img-wrap"><img src="https://instagram.fbth9-1.fna.fbcdn.net/v/t51.82787-15/706417450_17939668686235387_3889305815365416951_n.heic?stp=dst-jpg_e35_tt6&_nc_cat=101&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTQ0MC5zZHIucmVndWxhcl9waG90by5DMiJ9&_nc_ohc=BK6o3zfN8HkQ7kNvwGJ_tWq&_nc_oc=AdoqN1cfbmyKl82eoBhY8QvA4WYESnS9cJywi5xCj9S3FvM4GZVYjnDFcntbVJRode8&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.fbth9-1.fna&_nc_gid=BmDQd5jlf7DRUP5zj8Gb9g&_nc_ss=7a22e&oh=00_Af_7exCAtjpbgWyOUy_AXlSR0L-ISKz2iD-NXFk7CL2-Vw&oe=6A2AAD43" alt="Cupcake Assortment" loading="lazy" /></div>
-        <div class="info">
-          <h3>Custom Cupcake Box</h3>
-          <p>Cupcake premium untuk berbagai acara. Tersedia custom message & tema.</p>
+          <p>Roll cake super lembut dengan cream cheese filling dan campuran berry segar. Perpaduan manis & asam yang sempurna.</p>
         </div>
       </div>
       <div class="product-card">
         <div class="img-wrap">
-          <div style="display:flex;align-items:center;justify-content:center;height:100%;background:#f8f0e8;font-size:2.5rem;">🎁</div>
+          <img src="https://instagram.fbth9-1.fna.fbcdn.net/v/t51.82787-15/681211729_17935472874235387_8028815349483810601_n.heic?stp=dst-jpg_e35_tt6&_nc_cat=111&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTQ0MC5zZHIucmVndWxhcl9waG90by5DMiJ9&_nc_ohc=JoeaSahSUakQ7kNvwFJLj_3&_nc_oc=Adr_Q-SGSvNqkvV9lNAPCUIvNl3td31niDgJc9iYXV_J7No7fZb77U5IVBdkDD91nj8&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.fbth9-1.fna&_nc_gid=BmDQd5jlf7DRUP5zj8Gb9g&_nc_ss=7a22e&oh=00_Af9ev8ORXCT0fAjVc9HqKxREd_imFYPiaz2JYz8LkPa1Vg&oe=6A2A99C6" alt="Chocolate Mousse Tart" loading="lazy" />
+          <span class="badge">Best Seller</span>
+        </div>
+        <div class="info">
+          <h3>Chocolate Mousse Tart</h3>
+          <p>Chocolate mousse yang lumer di mulut di atas crust renyah. Dark chocolate 52% — cocok untuk pecinta cokelat sejati.</p>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="img-wrap">
+          <img src="https://instagram.fbth9-1.fna.fbcdn.net/v/t51.82787-15/673169159_17934194145235387_1824414916921185432_n.heic?stp=dst-jpg_e35_tt6&_nc_cat=100&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTQ0MC5zZHIucmVndWxhcl9waG90by5DMiJ9&_nc_ohc=mItTvw9Y0MwQ7kNvwHDY4ns&_nc_oc=AdprhbYXVa0QhwN2Etn5pUU8zn6KaNZDI4WaBO5i7epCHzepioZhCi5MlOREroC_KsM&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.fbth9-1.fna&_nc_gid=BmDQd5jlf7DRUP5zj8Gb9g&_nc_ss=7a22e&oh=00_Af-wTUpH57DH3ODLHP4PyUlejVrruGne9YNRY7iVyxWJqg&oe=6A2ACEB3" alt="Strawberry Tart" loading="lazy" />
+          <span class="badge">🍓 Segar</span>
+        </div>
+        <div class="info">
+          <h3>Fresh Strawberry Tart</h3>
+          <p>Strawberry segar di atas pastry cream lembut dengan sentuhan vanilla. Cantik, manis alami, dan menyegarkan.</p>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="img-wrap">
+          <img src="https://instagram.fbth9-1.fna.fbcdn.net/v/t51.82787-15/711680060_17940639204235387_3529425098898601419_n.heic?stp=dst-jpg_e35_tt6&_nc_cat=100&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTQ0MC5zZHIucmVndWxhcl9waG90by5DMiJ9&_nc_ohc=S6clBL1rirgQ7kNvwFgQhMS&_nc_oc=AdpQ9B3aAOZRS2Q9GqP4Kn2yrRjCzDNb5dwmUwXoJQo_GquGjM-brc72xyTgOYkkglk&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.fbth9-1.fna&_nc_gid=BmDQd5jlf7DRUP5zj8Gb9g&_nc_ss=7a22e&oh=00_Af_gkpDXwf_DZvgFfiUR_gfpU63KyjrjwmHMTJAgkhlFPQ&oe=6A2AC44A" alt="Mixed Fruit Tart" loading="lazy" />
+          <span class="badge">🎁 Hampers</span>
+        </div>
+        <div class="info">
+          <h3>Mixed Fruit Tart</h3>
+          <p>Perpaduan buah musiman segar — blueberry, strawberry, kiwi — di atas custard lembut. Favorit untuk hampers!</p>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="img-wrap">
+          <img src="https://instagram.fbth9-1.fna.fbcdn.net/v/t51.82787-15/706417450_17939668686235387_3889305815365416951_n.heic?stp=dst-jpg_e35_tt6&_nc_cat=101&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTQ0MC5zZHIucmVndWxhcl9waG90by5DMiJ9&_nc_ohc=BK6o3zfN8HkQ7kNvwGJ_tWq&_nc_oc=AdoqN1cfbmyKl82eoBhY8QvA4WYESnS9cJywi5xCj9S3FvM4GZVYjnDFcntbVJRode8&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.fbth9-1.fna&_nc_gid=BmDQd5jlf7DRUP5zj8Gb9g&_nc_ss=7a22e&oh=00_Af_7exCAtjpbgWyOUy_AXlSR0L-ISKz2iD-NXFk7CL2-Vw&oe=6A2AAD43" alt="Cupcake Assortment" loading="lazy" />
+          <span class="badge">🧁 Custom</span>
+        </div>
+        <div class="info">
+          <h3>Custom Cupcake Box</h3>
+          <p>Set cupcake premium 6-12 pcs dengan frosting pilihan. Cocok untuk ulang tahun, bridal shower, atau acara kantor.</p>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="img-wrap" style="background:var(--latte);display:flex;align-items:center;justify-content:center;font-size:3.5rem">
+          🎁
         </div>
         <div class="info">
           <h3>Gift Box & Hampers</h3>
-          <p>Paket hadiah istimewa untuk momen spesial. Kurasi sendiri atau pilih paket kami.</p>
+          <p>Paket hadiah spesial dengan kurasi sendiri. Tart mini, cake, dan dessert dalam kemasan cantik siap dikirim.</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<section>
-  <div class="container">
-    <h2 class="section-title">Tentang Lachérie Bakes</h2>
-    <div class="about-content">
-      <p>Lachérie Bakes hadir dari kecintaan pada dunia pastry. Berlokasi di <strong>Batam</strong>, kami membuat setiap tart, cake, dan dessert dengan penuh cinta — dari pemilihan bahan hingga sentuhan akhir.</p>
-      <p style="margin-top:12px;">Kami percaya setiap momen spesial layak dirayakan dengan sesuatu yang manis. 🥧✨</p>
+<section class="about" id="about">
+  <div class="container about-grid">
+    <div class="about-image">
+      <img src="https://instagram.fbth9-1.fna.fbcdn.net/v/t51.82787-15/711751695_17941129104235387_6603607446976717855_n.heic?stp=dst-jpg_e35_tt6&_nc_cat=102&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTQ0MC5zZHIucmVndWxhcl9waG90by5DMiJ9&_nc_ohc=vBMiB3rxw7wQ7kNvwEU37KF&_nc_oc=AdprkEOnMOexwfcwxFd2r5DKyIdIGAIYrqyWbY-B6WIffAl5RllZxsR4ppK52lNUkDI&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.fbth9-1.fna&_nc_gid=BmDQd5jlf7DRUP5zj8Gb9g&_nc_ss=7a22e&oh=00_Af9hTnlPbFuFr8m240AipOLD_xzVYOVbOxTqxryKNQiW3w&oe=6A2AB2C7" alt="About Lachérie Bakes" loading="lazy" />
+      <div class="stamp">Since<br>2025</div>
+    </div>
+    <div class="about-text">
+      <div class="section-label">Our Story</div>
+      <h3>Cerita di Balik Setiap Tart</h3>
+      <p>Lachérie Bakes lahir dari kecintaan pada seni pastry. Berawal dari dapur kecil di Batam, kami meracik setiap tart, cake, dan dessert dengan bahan-bahan pilihan — dari butter Prancis hingga buah musiman segar.</p>
+      <p>Kami percaya setiap momen spesial layak dirayakan dengan sesuatu yang indah — dan enak. Dari resep klasik hingga kreasi kontemporer, setiap produk adalah hasil eksperimen dan cinta.</p>
+      <p style="font-style:italic;color:var(--gold)">"Freshly baked with love, every single day."</p>
+      <div style="display:flex;gap:24px;margin-top:20px">
+        <div><strong style="font-size:1.6rem;color:var(--deep)">50+</strong><br><span style="font-size:.85rem;color:var(--warm)">Varian Tart</span></div>
+        <div><strong style="font-size:1.6rem;color:var(--deep)">100%</strong><br><span style="font-size:.85rem;color:var(--warm)">Handmade</span></div>
+        <div><strong style="font-size:1.6rem;color:var(--deep)">⚡</strong><br><span style="font-size:.85rem;color:var(--warm)">Pre-order 1-3 hari</span></div>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="products" id="gallery">
+<section class="gallery" id="gallery">
   <div class="container">
-    <h2 class="section-title">Galeri</h2>
+    <div class="section-label">Galeri</div>
+    <h2 class="section-title">Kreasi Terbaru Kami</h2>
     <div class="gallery-grid">
-      <img src="https://instagram.fbth9-1.fna.fbcdn.net/v/t51.82787-15/711751695_17941129104235387_6603607446976717855_n.heic?stp=dst-jpg_e35_tt6&_nc_cat=102&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTQ0MC5zZHIucmVndWxhcl9waG90by5DMiJ9&_nc_ohc=vBMiB3rxw7wQ7kNvwEU37KF&_nc_oc=AdprkEOnMOexwfcwxFd2r5DKyIdIGAIYrqyWbY-B6WIffAl5RllZxsR4ppK52lNUkDI&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.fbth9-1.fna&_nc_gid=BmDQd5jlf7DRUP5zj8Gb9g&_nc_ss=7a22e&oh=00_Af9hTnlPbFuFr8m240AipOLD_xzVYOVbOxTqxryKNQiW3w&oe=6A2AB2C7" alt="Gallery" loading="lazy" />
-      <img src="https://instagram.fbth9-1.fna.fbcdn.net/v/t51.82787-15/704703098_17939361738235387_5179192114655930659_n.heic?stp=dst-jpg_e35_tt6&_nc_cat=109&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTQ0MC5zZHIucmVndWxhcl9waG90by5DMiJ9&_nc_ohc=dIegOw-EEn8Q7kNvwHuASmo&_nc_oc=AdqP6DuorDjBpNrQyPh7guppKSkUUr5semXkCD5RfZYrMubk48ErjBvxhs_Q89Fpq-w&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.fbth9-1.fna&_nc_gid=BmDQd5jlf7DRUP5zj8Gb9g&_nc_ss=7a22e&oh=00_Af-u1NNFAUxi2_mpz5jgk96ozfTbsAOLdJjg9pscdEjRBA&oe=6A2A9D78" alt="Gallery" loading="lazy" />
-      <img src="https://instagram.fbth9-1.fna.fbcdn.net/v/t51.82787-15/681211729_17935472874235387_8028815349483810601_n.heic?stp=dst-jpg_e35_tt6&_nc_cat=111&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTQ0MC5zZHIucmVndWxhcl9waG90by5DMiJ9&_nc_ohc=JoeaSahSUakQ7kNvwFJLj_3&_nc_oc=Adr_Q-SGSvNqkvV9lNAPCUIvNl3td31niDgJc9iYXV_J7No7fZb77U5IVBdkDD91nj8&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.fbth9-1.fna&_nc_gid=BmDQd5jlf7DRUP5zj8Gb9g&_nc_ss=7a22e&oh=00_Af9ev8ORXCT0fAjVc9HqKxREd_imFYPiaz2JYz8LkPa1Vg&oe=6A2A99C6" alt="Gallery" loading="lazy" />
+      <div class="gallery-item tall">
+        <img src="https://instagram.fbth9-1.fna.fbcdn.net/v/t51.82787-15/704703098_17939361738235387_5179192114655930659_n.heic?stp=dst-jpg_e35_tt6&_nc_cat=109&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTQ0MC5zZHIucmVndWxhcl9waG90by5DMiJ9&_nc_ohc=dIegOw-EEn8Q7kNvwHuASmo&_nc_oc=AdqP6DuorDjBpNrQyPh7guppKSkUUr5semXkCD5RfZYrMubk48ErjBvxhs_Q89Fpq-w&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.fbth9-1.fna&_nc_gid=BmDQd5jlf7DRUP5zj8Gb9g&_nc_ss=7a22e&oh=00_Af-u1NNFAUxi2_mpz5jgk96ozfTbsAOLdJjg9pscdEjRBA&oe=6A2A9D78" alt="Gallery" loading="lazy" />
+      </div>
+      <div class="gallery-item">
+        <img src="https://instagram.fbth9-1.fna.fbcdn.net/v/t51.82787-15/711680060_17940639204235387_3529425098898601419_n.heic?stp=dst-jpg_e35_tt6&_nc_cat=100&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTQ0MC5zZHIucmVndWxhcl9waG90by5DMiJ9&_nc_ohc=S6clBL1rirgQ7kNvwFgQhMS&_nc_oc=AdpQ9B3aAOZRS2Q9GqP4Kn2yrRjCzDNb5dwmUwXoJQo_GquGjM-brc72xyTgOYkkglk&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.fbth9-1.fna&_nc_gid=BmDQd5jlf7DRUP5zj8Gb9g&_nc_ss=7a22e&oh=00_Af_gkpDXwf_DZvgFfiUR_gfpU63KyjrjwmHMTJAgkhlFPQ&oe=6A2AC44A" alt="Gallery" loading="lazy" />
+      </div>
+      <div class="gallery-item">
+        <img src="https://instagram.fbth9-1.fna.fbcdn.net/v/t51.82787-15/681211729_17935472874235387_8028815349483810601_n.heic?stp=dst-jpg_e35_tt6&_nc_cat=111&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTQ0MC5zZHIucmVndWxhcl9waG90by5DMiJ9&_nc_ohc=JoeaSahSUakQ7kNvwFJLj_3&_nc_oc=Adr_Q-SGSvNqkvV9lNAPCUIvNl3td31niDgJc9iYXV_J7No7fZb77U5IVBdkDD91nj8&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.fbth9-1.fna&_nc_gid=BmDQd5jlf7DRUP5zj8Gb9g&_nc_ss=7a22e&oh=00_Af9ev8ORXCT0fAjVc9HqKxREd_imFYPiaz2JYz8LkPa1Vg&oe=6A2A99C6" alt="Gallery" loading="lazy" />
+      </div>
+      <div class="gallery-item wide">
+        <img src="https://instagram.fbth9-1.fna.fbcdn.net/v/t51.82787-15/706417450_17939668686235387_3889305815365416951_n.heic?stp=dst-jpg_e35_tt6&_nc_cat=101&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTQ0MC5zZHIucmVndWxhcl9waG90by5DMiJ9&_nc_ohc=BK6o3zfN8HkQ7kNvwGJ_tWq&_nc_oc=AdoqN1cfbmyKl82eoBhY8QvA4WYESnS9cJywi5xCj9S3FvM4GZVYjnDFcntbVJRode8&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.fbth9-1.fna&_nc_gid=BmDQd5jlf7DRUP5zj8Gb9g&_nc_ss=7a22e&oh=00_Af_7exCAtjpbgWyOUy_AXlSR0L-ISKz2iD-NXFk7CL2-Vw&oe=6A2AAD43" alt="Gallery" loading="lazy" />
+      </div>
     </div>
   </div>
 </section>
 
-<section class="order-section" id="order">
+<section class="testimonials">
   <div class="container">
-    <h2 class="section-title">Cara Pemesanan</h2>
-    <div class="order-info">
-      <div class="item">
-        <div class="label">📍 Lokasi</div>
+    <div class="section-label">Testimoni</div>
+    <h2 class="section-title" style="text-align:center">Apa Kata Pelanggan</h2>
+    <div class="testimonial-card">
+      <div class="stars">⭐⭐⭐⭐⭐</div>
+      <p>"First time order Berry Cheese Roll Cake — enak banget! Cream cheese-nya pas, buahnya fresh. Packaging cantik, aman sampai tujuan. Recommended banget buat yang suka dessert premium. Next order lagi pasti!"</p>
+      <div class="author">— Sarah, Pelanggan Setia</div>
+    </div>
+  </div>
+</section>
+
+<section class="order" id="order">
+  <div class="container">
+    <div class="section-label" style="color:var(--gold);padding-left:0;margin-bottom:12px">✦ Pesan Sekarang</div>
+    <h2 class="section-title">Ready to Order?</h2>
+    <p class="section-desc">Setiap pesanan dibuat fresh setelah order. Pre-order minimal H-1. Bisa custom sesuai request.</p>
+    <div class="contact-cards">
+      <div class="contact-card">
+        <div class="icon">📍</div>
+        <div class="label">Lokasi</div>
         <div class="value">Batam, Kep. Riau</div>
       </div>
-      <div class="item">
-        <div class="label">⏰ Jam Operasional</div>
-        <div class="value">Setiap Hari · 08:00–21:00</div>
+      <div class="contact-card">
+        <div class="icon">⏰</div>
+        <div class="label">Jam Operasional</div>
+        <div class="value">08:00 – 21:00</div>
       </div>
-      <div class="item">
-        <div class="label">📞 WhatsApp</div>
+      <div class="contact-card">
+        <div class="icon">📞</div>
+        <div class="label">WhatsApp</div>
         <div class="value">+62 817-9851-688</div>
       </div>
-      <div class="item">
-        <div class="label">🚚 Pengiriman</div>
-        <div class="value">Batam & Sekitarnya</div>
+      <div class="contact-card">
+        <div class="icon">🚚</div>
+        <div class="label">Pengiriman</div>
+        <div class="value">Batam & Sekitar</div>
       </div>
     </div>
-    <a href="https://wa.me/628179851688?text=Halo%20Lach%C3%A9rie%20Bakes!%20Saya%20mau%20order" class="btn btn-wa" target="_blank">💬 Pesan Sekarang</a>
+    <a href="https://wa.me/628179851688?text=Halo%20Lach%C3%A9rie%20Bakes!%20Saya%20mau%20order" class="btn btn-wa" target="_blank">💬 Chat WhatsApp</a>
   </div>
 </section>
 
 <footer>
-  <div class="container">
-    <div class="social">
-      <a href="https://www.instagram.com/lacheriebakess/" target="_blank">📸 Instagram</a>
-      <a href="https://wa.me/628179851688" target="_blank">💬 WhatsApp</a>
+  <div class="container footer-grid">
+    <div>
+      <h4>Lachérie Bakes</h4>
+      <p>Membuat momen spesial lebih manis dengan tart, cake, dan dessert handmade premium sejak 2025. Batam, Kepulauan Riau.</p>
+      <p style="margin-top:8px">✨ Freshly baked with love, every single day.</p>
     </div>
-    <p>&copy; 2026 Lachérie Bakes — Batam. Freshly baked with love.</p>
-    <p style="margin-top:4px;font-size:0.75rem;">Website by BOSS Web</p>
+    <div>
+      <h4>Menu</h4>
+      <a href="#products">Signature Collection</a><br>
+      <a href="#about">Tentang Kami</a><br>
+      <a href="#gallery">Galeri</a><br>
+      <a href="#order">Pemesanan</a>
+    </div>
+    <div>
+      <h4>Kontak</h4>
+      <a href="https://www.instagram.com/lacheriebakess/" target="_blank">📸 @lacheriebakess</a><br>
+      <a href="https://wa.me/628179851688" target="_blank">💬 +62 817-9851-688</a>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <span>&copy; 2026 Lachérie Bakes — Batam</span>
+    <span>Website by BOSS Web</span>
   </div>
 </footer>
 
+<script>
+window.addEventListener('scroll',()=>{
+  document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>40)
+})
+</script>
 </body>
 </html>
