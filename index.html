@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lachérie Bakes — Tart, Cake & Gift Boxes Premium Batam</title>
+  <meta name="description" content="Lachérie Bakes — Freshly baked with love. Tart, cake, dessert & gift boxes premium di Batam. Pesan via WhatsApp." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; color: #2d2a24; background: #fefaf7; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+    /* Nav */
+    nav {
+      padding: 16px 0; position: fixed; top: 0; left: 0; right: 0;
+      background: rgba(254,250,247,0.95); backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(0,0,0,0.06); z-index: 100;
+    }
+    nav .container { display: flex; align-items: center; justify-content: space-between; }
+    .logo { font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 700; color: #8b5e3c; text-decoration: none; }
+    .logo em { font-style: normal; }
+    .logo span { font-weight: 400; font-size: 0.8rem; color: #b8865a; }
+    nav a { color: #5a4a3a; text-decoration: none; font-size: 0.9rem; font-weight: 500; }
+    nav a:hover { color: #8b5e3c; }
+
+    /* Hero */
+    .hero {
+      margin-top: 68px; padding: 80px 0 60px;
+      background: linear-gradient(135deg, #fdf6f0, #f8ede4);
+      text-align: center;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif; font-size: 3rem; font-weight: 700;
+      color: #5a3a2a; margin-bottom: 8px;
+    }
+    .hero .tagline { font-size: 1.15rem; color: #8b6e5a; font-style: italic; margin-bottom: 16px; }
+    .hero .bio { max-width: 500px; margin: 0 auto 28px; color: #7a6a5a; line-height: 1.6; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px; padding: 14px 32px;
+      border-radius: 50px; font-weight: 600; text-decoration: none; font-size: 0.95rem;
+      transition: 0.2s;
+    }
+    .btn-wa { background: #25D366; color: #fff; }
+    .btn-wa:hover { background: #1da851; transform: translateY(-2px); }
+    .btn-outline { border: 2px solid #c4a88a; color: #5a3a2a; background: transparent; }
+    .btn-outline:hover { background: #c4a88a; color: #fff; }
+
+    .hero-gallery {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
+      max-width: 800px; margin: 40px auto 0;
+    }
+    .hero-gallery img {
+      width: 100%; height: 220px; object-fit: cover; border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08); transition: 0.3s;
+    }
+    .hero-gallery img:hover { transform: scale(1.03); box-shadow: 0 8px 30px rgba(0,0,0,0.12); }
+
+    /* Sections */
+    section { padding: 64px 0; }
+    .section-title {
+      font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 600;
+      text-align: center; color: #5a3a2a; margin-bottom: 40px;
+    }
+    .section-title:after {
+      content: ""; display: block; width: 40px; height: 2px;
+      background: #c4a88a; margin: 12px auto 0;
+    }
+
+    /* Products */
+    .products { background: #fff; }
+    .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; }
+
+    .product-card {
+      background: #fefaf7; border-radius: 16px; overflow: hidden;
+      border: 1px solid #f0e8e0; transition: 0.3s;
+    }
+    .product-card:hover { box-shadow: 0 8px 24px rgba(0,0,0,0.08); transform: translateY(-4px); }
+    .product-card .img-wrap {
+      height: 200px; overflow: hidden; background: #f8f0e8;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .product-card .img-wrap img { width: 100%; height: 100%; object-fit: cover; }
+    .product-card .info { padding: 20px; }
+    .product-card h3 { font-family: 'Playfair Display', serif; font-size: 1.1rem; margin-bottom: 6px; color: #5a3a2a; }
+    .product-card p { color: #8a7a6a; font-size: 0.9rem; line-height: 1.5; }
+
+    /* About */
+    .about-content { max-width: 700px; margin: 0 auto; text-align: center; color: #7a6a5a; line-height: 1.8; }
+
+    /* Order */
+    .order-section {
+      background: linear-gradient(135deg, #fdf6f0, #f8ede4);
+      text-align: center;
+    }
+    .order-info { display: grid; grid-template-columns: repeat(2,1fr); gap: 20px; max-width: 500px; margin: 0 auto 28px; }
+    .order-info .item { padding: 20px; background: #fff; border-radius: 12px; }
+    .order-info .item .label { font-size: 0.8rem; color: #b8865a; text-transform: uppercase; letter-spacing: 1px; }
+    .order-info .item .value { font-weight: 600; margin-top: 4px; color: #5a3a2a; }
+
+    /* Gallery */
+    .gallery-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; }
+    .gallery-grid img { width: 100%; height: 260px; object-fit: cover; border-radius: 12px; }
+
+    /* Footer */
+    footer { padding: 32px 0; text-align: center; background: #2d2a24; color: #a09080; font-size: 0.85rem; }
+    footer .social { margin-bottom: 12px; }
+    footer .social a { color: #c4a88a; text-decoration: none; margin: 0 8px; font-size: 0.9rem; }
+
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2rem; }
+      .hero-gallery { grid-template-columns: 1fr; }
+      .hero-gallery img { height: 200px; }
+      .gallery-grid { grid-template-columns: 1fr 1fr; }
+      .order-info { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="container">
+    <a href="/" class="logo">Lachérie <em>Bakes</em> <span>✦ Batam</span></a>
+    <div>
+      <a href="#products" style="margin-right:16px;">Menu</a>
+      <a href="#order">Pesan</a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="container">
+    <h1>Freshly Baked with Love</h1>
+    <p class="tagline">✦ Tart · Cake · Dessert · Gift Boxes ✦</p>
+    <p class="bio">Setiap gigitan adalah karya cinta. Lachérie Bakes menghadirkan tart, cake, dan dessert premium yang dibuat dengan bahan-bahan terbaik di Batam.</p>
+    <div>
+      <a href="https://wa.me/628179851688?text=Halo%20Lach%C3%A9rie%20Bakes!%20Saya%20tertarik%20dengan%20produk%20Anda" class="btn btn-wa" target="_blank">💬 Pesan via WhatsApp</a>
+      <a href="#products" class="btn btn-outline" style="margin-left:8px;">Lihat Menu</a>
+    </div>
+
+    <div class="hero-gallery">
+      <img src="https://instagram.fbth9-1.fna.fbcdn.net/v/t51.82787-15/711751695_17941129104235387_6603607446976717855_n.heic?stp=dst-jpg_e35_tt6&_nc_cat=102&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTQ0MC5zZHIucmVndWxhcl9waG90by5DMiJ9&_nc_ohc=vBMiB3rxw7wQ7kNvwEU37KF&_nc_oc=AdprkEOnMOexwfcwxFd2r5DKyIdIGAIYrqyWbY-B6WIffAl5RllZxsR4ppK52lNUkDI&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.fbth9-1.fna&_nc_gid=BmDQd5jlf7DRUP5zj8Gb9g&_nc_ss=7a22e&oh=00_Af9hTnlPbFuFr8m240AipOLD_xzVYOVbOxTqxryKNQiW3w&oe=6A2AB2C7" alt="Lachérie Bakes Cake" loading="lazy" />
+      <img src="https://instagram.fbth9-1.fna.fbcdn.net/v/t51.82787-15/711680060_17940639204235387_3529425098898601419_n.heic?stp=dst-jpg_e35_tt6&_nc_cat=100&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTQ0MC5zZHIucmVndWxhcl9waG90by5DMiJ9&_nc_ohc=S6clBL1rirgQ7kNvwFgQhMS&_nc_oc=AdpQ9B3aAOZRS2Q9GqP4Kn2yrRjCzDNb5dwmUwXoJQo_GquGjM-brc72xyTgOYkkglk&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.fbth9-1.fna&_nc_gid=BmDQd5jlf7DRUP5zj8Gb9g&_nc_ss=7a22e&oh=00_Af_gkpDXwf_DZvgFfiUR_gfpU63KyjrjwmHMTJAgkhlFPQ&oe=6A2AC44A" alt="Lachérie Bakes Tart" loading="lazy" />
+      <img src="https://instagram.fbth9-1.fna.fbcdn.net/v/t51.82787-15/706417450_17939668686235387_3889305815365416951_n.heic?stp=dst-jpg_e35_tt6&_nc_cat=101&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTQ0MC5zZHIucmVndWxhcl9waG90by5DMiJ9&_nc_ohc=BK6o3zfN8HkQ7kNvwGJ_tWq&_nc_oc=AdoqN1cfbmyKl82eoBhY8QvA4WYESnS9cJywi5xCj9S3FvM4GZVYjnDFcntbVJRode8&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.fbth9-1.fna&_nc_gid=BmDQd5jlf7DRUP5zj8Gb9g&_nc_ss=7a22e&oh=00_Af_7exCAtjpbgWyOUy_AXlSR0L-ISKz2iD-NXFk7CL2-Vw&oe=6A2AAD43" alt="Lachérie Bakes Cupcake" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<section class="products" id="products">
+  <div class="container">
+    <h2 class="section-title">Menu Kami</h2>
+    <div class="product-grid">
+      <div class="product-card">
+        <div class="img-wrap"><img src="https://instagram.fbth9-1.fna.fbcdn.net/v/t51.82787-15/704703098_17939361738235387_5179192114655930659_n.heic?stp=dst-jpg_e35_tt6&_nc_cat=109&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTQ0MC5zZHIucmVndWxhcl9waG90by5DMiJ9&_nc_ohc=dIegOw-EEn8Q7kNvwHuASmo&_nc_oc=AdqP6DuorDjBpNrQyPh7guppKSkUUr5semXkCD5RfZYrMubk48ErjBvxhs_Q89Fpq-w&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.fbth9-1.fna&_nc_gid=BmDQd5jlf7DRUP5zj8Gb9g&_nc_ss=7a22e&oh=00_Af-u1NNFAUxi2_mpz5jgk96ozfTbsAOLdJjg9pscdEjRBA&oe=6A2A9D78" alt="Berry Cheese Roll Cake" loading="lazy" /></div>
+        <div class="info">
+          <h3>Berry Cheese Roll Cake</h3>
+          <p>Roll cake lembut dengan cream cheese dan buah berry segar. Manis & asam yang pas.</p>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="img-wrap"><img src="https://instagram.fbth9-1.fna.fbcdn.net/v/t51.82787-15/681211729_17935472874235387_8028815349483810601_n.heic?stp=dst-jpg_e35_tt6&_nc_cat=111&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTQ0MC5zZHIucmVndWxhcl9waG90by5DMiJ9&_nc_ohc=JoeaSahSUakQ7kNvwFJLj_3&_nc_oc=Adr_Q-SGSvNqkvV9lNAPCUIvNl3td31niDgJc9iYXV_J7No7fZb77U5IVBdkDD91nj8&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.fbth9-1.fna&_nc_gid=BmDQd5jlf7DRUP5zj8Gb9g&_nc_ss=7a22e&oh=00_Af9ev8ORXCT0fAjVc9HqKxREd_imFYPiaz2JYz8LkPa1Vg&oe=6A2A99C6" alt="Chocolate Mousse Tart" loading="lazy" /></div>
+        <div class="info">
+          <h3>Chocolate Mousse Tart</h3>
+          <p>Chocolate mousse lembut di atas crust renyah. Cocok untuk pecinta cokelat sejati.</p>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="img-wrap"><img src="https://instagram.fbth9-1.fna.fbcdn.net/v/t51.82787-15/673169159_17934194145235387_1824414916921185432_n.heic?stp=dst-jpg_e35_tt6&_nc_cat=100&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTQ0MC5zZHIucmVndWxhcl9waG90by5DMiJ9&_nc_ohc=mItTvw9Y0MwQ7kNvwHDY4ns&_nc_oc=AdprhbYXVa0QhwN2Etn5pUU8zn6KaNZDI4WaBO5i7epCHzepioZhCi5MlOREroC_KsM&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.fbth9-1.fna&_nc_gid=BmDQd5jlf7DRUP5zj8Gb9g&_nc_ss=7a22e&oh=00_Af-wTUpH57DH3ODLHP4PyUlejVrruGne9YNRY7iVyxWJqg&oe=6A2ACEB3" alt="Strawberry Tart" loading="lazy" /></div>
+        <div class="info">
+          <h3>Fresh Strawberry Tart</h3>
+          <p>Strawberry segar di atas pastry cream lembut. Manis alami, tampilan cantik.</p>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="img-wrap"><img src="https://instagram.fbth9-1.fna.fbcdn.net/v/t51.82787-15/711680060_17940639204235387_3529425098898601419_n.heic?stp=dst-jpg_e35_tt6&_nc_cat=100&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTQ0MC5zZHIucmVndWxhcl9waG90by5DMiJ9&_nc_ohc=S6clBL1rirgQ7kNvwFgQhMS&_nc_oc=AdpQ9B3aAOZRS2Q9GqP4Kn2yrRjCzDNb5dwmUwXoJQo_GquGjM-brc72xyTgOYkkglk&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.fbth9-1.fna&_nc_gid=BmDQd5jlf7DRUP5zj8Gb9g&_nc_ss=7a22e&oh=00_Af_gkpDXwf_DZvgFfiUR_gfpU63KyjrjwmHMTJAgkhlFPQ&oe=6A2AC44A" alt="Mixed Fruit Tart" loading="lazy" /></div>
+        <div class="info">
+          <h3>Mixed Fruit Tart</h3>
+          <p>Perpaduan buah segar dengan custard lembut. Favorit untuk hampers & gift box!</p>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="img-wrap"><img src="https://instagram.fbth9-1.fna.fbcdn.net/v/t51.82787-15/706417450_17939668686235387_3889305815365416951_n.heic?stp=dst-jpg_e35_tt6&_nc_cat=101&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTQ0MC5zZHIucmVndWxhcl9waG90by5DMiJ9&_nc_ohc=BK6o3zfN8HkQ7kNvwGJ_tWq&_nc_oc=AdoqN1cfbmyKl82eoBhY8QvA4WYESnS9cJywi5xCj9S3FvM4GZVYjnDFcntbVJRode8&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.fbth9-1.fna&_nc_gid=BmDQd5jlf7DRUP5zj8Gb9g&_nc_ss=7a22e&oh=00_Af_7exCAtjpbgWyOUy_AXlSR0L-ISKz2iD-NXFk7CL2-Vw&oe=6A2AAD43" alt="Cupcake Assortment" loading="lazy" /></div>
+        <div class="info">
+          <h3>Custom Cupcake Box</h3>
+          <p>Cupcake premium untuk berbagai acara. Tersedia custom message & tema.</p>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="img-wrap">
+          <div style="display:flex;align-items:center;justify-content:center;height:100%;background:#f8f0e8;font-size:2.5rem;">🎁</div>
+        </div>
+        <div class="info">
+          <h3>Gift Box & Hampers</h3>
+          <p>Paket hadiah istimewa untuk momen spesial. Kurasi sendiri atau pilih paket kami.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <h2 class="section-title">Tentang Lachérie Bakes</h2>
+    <div class="about-content">
+      <p>Lachérie Bakes hadir dari kecintaan pada dunia pastry. Berlokasi di <strong>Batam</strong>, kami membuat setiap tart, cake, dan dessert dengan penuh cinta — dari pemilihan bahan hingga sentuhan akhir.</p>
+      <p style="margin-top:12px;">Kami percaya setiap momen spesial layak dirayakan dengan sesuatu yang manis. 🥧✨</p>
+    </div>
+  </div>
+</section>
+
+<section class="products" id="gallery">
+  <div class="container">
+    <h2 class="section-title">Galeri</h2>
+    <div class="gallery-grid">
+      <img src="https://instagram.fbth9-1.fna.fbcdn.net/v/t51.82787-15/711751695_17941129104235387_6603607446976717855_n.heic?stp=dst-jpg_e35_tt6&_nc_cat=102&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTQ0MC5zZHIucmVndWxhcl9waG90by5DMiJ9&_nc_ohc=vBMiB3rxw7wQ7kNvwEU37KF&_nc_oc=AdprkEOnMOexwfcwxFd2r5DKyIdIGAIYrqyWbY-B6WIffAl5RllZxsR4ppK52lNUkDI&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.fbth9-1.fna&_nc_gid=BmDQd5jlf7DRUP5zj8Gb9g&_nc_ss=7a22e&oh=00_Af9hTnlPbFuFr8m240AipOLD_xzVYOVbOxTqxryKNQiW3w&oe=6A2AB2C7" alt="Gallery" loading="lazy" />
+      <img src="https://instagram.fbth9-1.fna.fbcdn.net/v/t51.82787-15/704703098_17939361738235387_5179192114655930659_n.heic?stp=dst-jpg_e35_tt6&_nc_cat=109&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTQ0MC5zZHIucmVndWxhcl9waG90by5DMiJ9&_nc_ohc=dIegOw-EEn8Q7kNvwHuASmo&_nc_oc=AdqP6DuorDjBpNrQyPh7guppKSkUUr5semXkCD5RfZYrMubk48ErjBvxhs_Q89Fpq-w&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.fbth9-1.fna&_nc_gid=BmDQd5jlf7DRUP5zj8Gb9g&_nc_ss=7a22e&oh=00_Af-u1NNFAUxi2_mpz5jgk96ozfTbsAOLdJjg9pscdEjRBA&oe=6A2A9D78" alt="Gallery" loading="lazy" />
+      <img src="https://instagram.fbth9-1.fna.fbcdn.net/v/t51.82787-15/681211729_17935472874235387_8028815349483810601_n.heic?stp=dst-jpg_e35_tt6&_nc_cat=111&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTQ0MC5zZHIucmVndWxhcl9waG90by5DMiJ9&_nc_ohc=JoeaSahSUakQ7kNvwFJLj_3&_nc_oc=Adr_Q-SGSvNqkvV9lNAPCUIvNl3td31niDgJc9iYXV_J7No7fZb77U5IVBdkDD91nj8&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.fbth9-1.fna&_nc_gid=BmDQd5jlf7DRUP5zj8Gb9g&_nc_ss=7a22e&oh=00_Af9ev8ORXCT0fAjVc9HqKxREd_imFYPiaz2JYz8LkPa1Vg&oe=6A2A99C6" alt="Gallery" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<section class="order-section" id="order">
+  <div class="container">
+    <h2 class="section-title">Cara Pemesanan</h2>
+    <div class="order-info">
+      <div class="item">
+        <div class="label">📍 Lokasi</div>
+        <div class="value">Batam, Kep. Riau</div>
+      </div>
+      <div class="item">
+        <div class="label">⏰ Jam Operasional</div>
+        <div class="value">Setiap Hari · 08:00–21:00</div>
+      </div>
+      <div class="item">
+        <div class="label">📞 WhatsApp</div>
+        <div class="value">+62 817-9851-688</div>
+      </div>
+      <div class="item">
+        <div class="label">🚚 Pengiriman</div>
+        <div class="value">Batam & Sekitarnya</div>
+      </div>
+    </div>
+    <a href="https://wa.me/628179851688?text=Halo%20Lach%C3%A9rie%20Bakes!%20Saya%20mau%20order" class="btn btn-wa" target="_blank">💬 Pesan Sekarang</a>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="social">
+      <a href="https://www.instagram.com/lacheriebakess/" target="_blank">📸 Instagram</a>
+      <a href="https://wa.me/628179851688" target="_blank">💬 WhatsApp</a>
+    </div>
+    <p>&copy; 2026 Lachérie Bakes — Batam. Freshly baked with love.</p>
+    <p style="margin-top:4px;font-size:0.75rem;">Website by BOSS Web</p>
+  </div>
+</footer>
+
+</body>
+</html>
